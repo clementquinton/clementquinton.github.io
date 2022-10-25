@@ -1,47 +1,6 @@
-# Build settings
-permalink: /blog/:year/:title/
-markdown: kramdown
-highlighter: rouge
-plugins: [jekyll-paginate]
-
-paginate: 3
-paginate_path: "/blog/page/:num/"
-comments: true
-
-source: source
-destination: _site
-sass:
-  sass_dir: _sass
-  style: compressed # expanded
-
-# SEO settings
-title: Aurelien Bourdon
-description: "Aurelien Bourdon's personal website"
-keywords: "Aurelien, Aurélien, Bourdon, Software, Engineer"
-url: https://abourdon.github.io
-
-google_analytics: UA-28831376-1
-disqus_shortname: abourdon-github-io
-
-# Author settings
-author:
-  name: Aurélien Bourdon
-  job: software engineer
-  thumb: /images/author.jpg
-  thumb_icon: /images/author_mini.jpg
-  email: aurelien.bourdon@gmail.com
-  url: https://abourdon.github.io
-  github: https://github.com/abourdon
-  twitter: https://twitter.com/aurelienbourdon
-  linkedin: https://linkedin.com/in/aurelienbourdon
-
-# navbar pages
-navbar:
-  - slug: about
-    title: About
-  - slug: blog
-    title: Blog
-  - slug: teaching
-    title: Teaching
-
-exclude: ["Gemfile", "Gemfile.lock", "README.md"]
+title: Clément Quinton
+logo: /assets/img/me.jpg
+description: University of Lille
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-minimal
