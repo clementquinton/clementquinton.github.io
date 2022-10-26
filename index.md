@@ -8,7 +8,7 @@ layout: default
 I'm an associate professor at University of Lille, with a particular interest in design, management and evolution of highly-configurable software systems. I'm member of the [Spirals](https://team.inria.fr/spirals/) group, a joint team between University of Lille within the [CRIStAL](https://www.cristal.univ-lille.fr/?lang=en) research center and [Inria](https://www.inria.fr/en/).
 
 Before joining University of Lille, I was a postdoctoral fellow at Politecnico di Milano for 3 years, where I worked in the [DEEP-SE group](http://deepse.dei.polimi.it/).
-I hold a MSc. in Computer Science from [University of Montpellier](https://www.umontpellier.fr/university-of-montpellier), and a PhD in Computer Science from University of Lille (2014). Prior to the PhD, I have been working for two years as a software engineer developing tools and apps for smartphones.
+I hold a MSc. in Computer Science from [University of Montpellier](https://www.umontpellier.fr/en/), and a PhD in Computer Science from University of Lille (2014). Prior to the PhD, I have been working for two years as a software engineer developing tools and apps for smartphones.
 
 ***
 
@@ -40,9 +40,9 @@ I hold a MSc. in Computer Science from [University of Montpellier](https://www.u
 ***
 
 ## Contact
-<img src="assets/img/map.png" width="35">&emsp;
+<img src="assets/img/map.png" width="35" alt="Map">&emsp;
 40 Avenue Halley, 59650 Villeneuve d'Ascq, France.
 
-<img src="assets/img/mail.png" width="35">&emsp; <a href="mailto:clement.quinton@univ-lille.fr">clement.quinton@univ-lille.fr</a>
+<img src="assets/img/mail.png" width="35" alt="Email">&emsp; <a href="mailto:clement.quinton@univ-lille.fr">clement.quinton@univ-lille.fr</a>
 
-<img src="assets/img/phone.png" width="35">&emsp; +33 359 358 770
+<img src="assets/img/phone.png" width="35" alt="Phone">&emsp; +33 359 358 770
