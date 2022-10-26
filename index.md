@@ -22,7 +22,7 @@ I hold a MSc. in Computer Science from [University of Montpellier](https://www.u
 
 ## Publications
 <ul class="downloads">
-  <li><a href="https://dblp.uni-trier.de/pers/hd/q/Quinton:Cl=eacute=ment"> <img src="assets/img/dblp.png" width="35" alt="DBLP"/></a></li>
+  <li><a href="https://dblp.uni-trier.de/pers/hd/q/Quinton:Cl=eacute=ment"> <img src="assets/img/dblp.png" width="32" alt="DBLP"/></a></li>
   <li><a href="https://scholar.google.com/citations?user=1nx4T-cAAAAJ&hl=en"> <img src="assets/img/scholar.png" width="30" alt="Google Scholar"/></a></li>
   <li><a href="https://hal.archives-ouvertes.fr/search/index/?q=%2A&authIdPerson_i=2755"> <img src="assets/img/hal.png" width="70" alt="HAL"/></a></li>
 </ul>
