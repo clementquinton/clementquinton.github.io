@@ -33,7 +33,6 @@ I hold a MSc. in Computer Science from [University of Montpellier](https://www.u
 *   Tristan Coignon (2022-), *Emerging development paradigms to support cloud-based micro-services deployment*.
 *   Alexandre Bonvoisin (2022-), *Frugal software architecture for deploying cloud native micro-services*.
 *   Edouard Guégain (2020-), *Taming the complexity of fog environments*.
-*   Omid Gheibi (2019-), *Machine Learning to support distributed self-adaptive software systems*.
 *   Zeinab Abou-Khalil (2017-2020), *Studying the evolution of the bug handling process in large open source ecosystems*.
 
 
