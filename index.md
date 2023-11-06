@@ -5,27 +5,28 @@ layout: default
 <!--[Link to another page](./another-page.html).-->
 
 ## Short bio
-I'm an associate professor at University of Lille, with a particular interest in design, management and evolution of highly-configurable software systems. I'm member of the [Spirals](https://team.inria.fr/spirals/) group, a joint team between University of Lille within the [CRIStAL](https://www.cristal.univ-lille.fr/?lang=en) research center and [Inria](https://www.inria.fr/en/).
+<div style="text-align: justify"> 
+I'm an associate professor at University of Lille, with a particular interest in design, management and evolution of highly-configurable software systems. I'm member of the <a href="https://team.inria.fr/spirals/">Spirals</a> group, a joint team between University of Lille within the <a href="https://www.cristal.univ-lille.fr/?lang=en/">CRIStAL</a> research center and <a href="https://www.inria.fr/en/">Inria</a>.
 
-Before joining University of Lille, I was a postdoctoral fellow at Politecnico di Milano for 3 years, where I worked in the [DEEP-SE group](http://deepse.dei.polimi.it/).
-I hold a MSc. in Computer Science from [University of Montpellier](https://www.umontpellier.fr/en/), and a PhD in Computer Science from University of Lille (2014). Prior to the PhD, I have been working for two years as a software engineer developing tools and apps for smartphones.
+Before joining University of Lille, I was a postdoctoral fellow at Politecnico di Milano for 3 years, where I worked in the <a href="http://deepse.dei.polimi.it/">DEEP-SE group</a>.
+I hold a MSc. in Computer Science from <a href="https://www.umontpellier.fr/en/">University of Montpellier</a>, and a PhD in Computer Science from University of Lille (2014). Prior to the PhD, I have been working for two years as a software engineer developing tools and apps for smartphones.
+</div>
 
 ***
 
 ## Research Interests
 * Software configuration, evolution and adaptation
+* Sustainable software
 * [Self-]Adaptive software systems, distributed systems
-* [Dynamic] software product lines, feature-oriented software development
-* Variability modeling, feature model analysis
-* Model-driven engineering    
 
 
 ## Publications
 <ul class="downloads">
   <li><a href="https://dblp.uni-trier.de/pers/hd/q/Quinton:Cl=eacute=ment"> <img src="assets/img/dblp.png" width="32" alt="DBLP"/></a></li>
-  <li><a href="https://scholar.google.com/citations?user=1nx4T-cAAAAJ&hl=en"> <img src="assets/img/scholar.png" width="30" alt="Google Scholar"/></a></li>
-  <li><a href="https://hal.archives-ouvertes.fr/search/index/?q=%2A&authIdPerson_i=2755"> <img src="assets/img/hal.png" width="70" alt="HAL"/></a></li>
+  <li><a href="https://scholar.google.com/citations?user=1nx4T-cAAAAJ&hl=en"> <img src="assets/img/scholar.png" width="27" alt="Google Scholar"/></a></li>
+  <li><a href="https://hal.archives-ouvertes.fr/search/index/?q=%2A&authIdPerson_i=2755"> <img src="assets/img/hal.png" width="75" alt="HAL"/></a></li>
 </ul>
+
 ***
 
 ## Supervised PhD students
