@@ -37,9 +37,9 @@ Most of my publications are freely accessible from <a href="https://hal.science/
 ## Supervised PhD students
 <div style="text-align: justify"> 
 <ul>
-  <li>(2022-202.) Maxime Huyghe. Automated software testing to improve the privacy of browsers.</li>
-  <li>(2022-202.) Tristan Coignon. Emerging development paradigms to support cloud-based micro-services deployment.</li>
-  <li>(2022-202.) Alexandre Bonvoisin. Frugal software architecture for deploying cloud native micro-services.</li>
+  <li>(2022-202~) Maxime Huyghe. Automated software testing to improve the privacy of browsers.</li>
+  <li>(2022-202~) Tristan Coignon. Emerging development paradigms to support cloud-based micro-services deployment.</li>
+  <li>(2022-202~) Alexandre Bonvoisin. Frugal software architecture for deploying cloud native micro-services.</li>
 </ul>
 </div>
 
