@@ -41,7 +41,7 @@ I hold a MSc. in Computer Science from University of Montpellier, and a PhD in C
 
 ## Contact
 <!--<img src="assets/img/map.png" width="35" alt="Map">&emsp;-->
-40 Avenue Halley, 59650 Villeneuve d'Ascq, France.</br>
+40 Avenue Halley, 59650 Villeneuve d'Ascq, France.<br/>
 <!--<img src="assets/img/mail.png" width="35" alt="Email">&emsp; -->
-<a href="mailto:clement.quinton@univ-lille.fr">clement.quinton@univ-lille.fr</a></br>
+<a href="mailto:clement.quinton@univ-lille.fr">clement.quinton@univ-lille.fr</a><br/>
 <!--<img src="assets/img/phone.png" width="35" alt="Phone">&emsp;--> +33 359 358 770
