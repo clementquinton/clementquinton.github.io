@@ -15,17 +15,23 @@ I hold a MSc. in Computer Science from University of Montpellier, and a PhD in C
 
 ***
 
-## Research Interests
-* Software configuration, evolution and adaptation
-* Sustainable software
-* [Self-]Adaptive software systems, distributed systems
-
+<h2 style="color: #e74c3c ;"> News</h2>
+-- Our paper entitled "*Understanding the Performance-Energy Tradeoffs of Object-Relational Mapping Frameworks*" is accepted at [SANER'24](https://conf.researchr.org/home/saner-2024).
 
 ## Bibliometrics
 
 <a href="https://dblp.uni-trier.de/pers/hd/q/Quinton:Cl=eacute=ment">[DBLP]</a>
 <a href="https://scholar.google.com/citations?user=1nx4T-cAAAAJ&hl=en">[Scholar]</a><br/>
 Most of my publications are freely accessible from <a href="https://hal.science/search/index/?q=%2A&rows=30&authIdPerson_i=2755&sort=producedDate_tdate+desc">[HAL]</a>.
+
+## Research Interests
+-- Software configuration <br/>
+-- Sustainable software <br/>
+-- [Self-]Adaptive software <br/>
+-- Distributed systems
+
+
+
 
 <!--ul class="downloads">
   <li><a href="https://dblp.uni-trier.de/pers/hd/q/Quinton:Cl=eacute=ment"> <img src="assets/img/dblp.png" width="32" alt="DBLP"/></a></li>
