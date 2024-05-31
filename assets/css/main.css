@@ -61,8 +61,8 @@ svg,img { max-width: 100%; height: auto; }
 .ds-socail ul li a:hover{color: #000; text-decoration: underline;} a:link{color: #2e86c1 ;}
 
 .ds-heading{ font-weight: 600; font-size: 3rem; line-height: 3.6875rem; margin-bottom:42px }
-.ds-info-sectio-wrp{ padding-left:2.5rem  }
-.ds-info-sectio p,.ds-project-details p{font-size: 1.125rem; line-height: 1.75rem; margin-bottom: 20px}
+.ds-info-sectio-wrp{ padding-left:0rem ; justify-content: space-between  }
+.ds-info-sectio p,.ds-project-details p{font-size: 1.125rem; line-height: 1.75rem; margin-bottom: 20px; justify-content: center}
 
 .ds-info-list-section{ margin-top:5.625rem  }
 .ds-info-list-section h3{font-size: 1.125rem;font-weight: 600; margin-bottom: 25px}
