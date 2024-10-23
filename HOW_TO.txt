@@ -1,0 +1,4 @@
+bundle exec jekyll serve
+localhost:4000
+
+Then push

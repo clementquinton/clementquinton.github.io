@@ -1,9 +1,31 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"Computing": 
+  color: "#009f36"
+"JSEP": 
+  color: "#009f36"
+"SPE": 
+  color: "#009f36"
+"ERCIM News": 
+  color: "#009f36"
+
+
+
+"ASYDE":
+  color: "#00369f"
+"MultiCloud":
+  color: "#00369f"
+"CloudCP":
+  color: "#00369f"
+"PLEASE":
+  color: "#00369f"
+"MAPLE":
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
 
-"Vision":
-  color: "#009f36"
+"Thesis":
+  color: "#f2822c"
+"HDR":
+  color: "#f2822c"
+
+
+"arXiv":
+  color: "#ab3df5"
