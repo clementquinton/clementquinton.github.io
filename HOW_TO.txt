@@ -2,3 +2,16 @@ bundle exec jekyll serve
 localhost:4000
 
 Then push
+
+
+Should you underline the students' names and explain your contributions?
+
+This is what I write: "The authors' order is subject to two constraints: each co-author's degree of involvement and each coauthor's seniority. Hence, the first authors are often the students whose research work is described in the publication while the names of the more senior researchers follow. Consequently, my name often appears last because I am usually the most senior researcher. However, I am involved in all the publications with my students, my degree of involvement varying with the students' research maturity; from idea to implementation to data analyses but always the writing."
+
+
+<mark style="background-color: #009f36;"><span style="color:#FFFFFF">Journal</span></mark>
+
+<mark style="background-color: #f2822c;"><span style="color:#FFFFFF">Other</span></mark>
+
+
+<mark style="background-color: #ab3df5;"><span style="color:#FFFFFF">arXiv</span></mark>
