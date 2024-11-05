@@ -79,12 +79,12 @@ include: ['_pages']
 # Plugins
 plugins:
   - jekyll-paginate
-  - jekyll-scholar
+  - jekyll/scholar
   - jemoji
 
 # Jekyll-Scholar
 scholar:
-  last_name: Stretcu
+  last_name: Quinton
   style: apa
   locale: en
   sort_by: year
