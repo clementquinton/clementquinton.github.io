@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 date: 2024-05-31
 inline: true
 related_posts: false
