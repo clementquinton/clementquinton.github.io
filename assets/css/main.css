@@ -34438,7 +34438,7 @@ $nav-height:                    56px;
 /* #b71c1c; */
 /************************************************************/
 .badge-notify {
-  background: #7cb342 !important;
+  background: #2698BA !important;
 }
 
 body {
@@ -34464,7 +34464,7 @@ footer a {
   color: #fafafa;
 }
 footer a:hover {
-  color: #7cb342;
+  color: #2698BA;
 }
 
 .title {
@@ -34472,7 +34472,7 @@ footer a:hover {
 }
 
 a {
-  color: #7cb342;
+  color: #2698BA;
   text-decoration: none;
 }
 a:hover {
@@ -34488,7 +34488,7 @@ a:hover {
 }
 
 .navbar-active a {
-  color: #7cb342 !important;
+  color: #2698BA !important;
 }
 
 .arrow-icon {
@@ -34618,7 +34618,7 @@ a:hover {
 }
 
 .cv h3 {
-  color: #7cb342;
+  color: #2698BA;
 }
 
 .bibliography .abbr a:hover {
@@ -34635,7 +34635,7 @@ progress {
   /* Progress bar container for Firefox/IE10+ */
   background-color: transparent;
   /* Progress bar value for IE10+ */
-  color: #7cb342;
+  color: #2698BA;
 }
 
 progress::-webkit-progress-bar {
@@ -34643,11 +34643,11 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: #7cb342;
+  background-color: #2698BA;
 }
 
 progress::-moz-progress-bar {
-  background-color: #7cb342;
+  background-color: #2698BA;
 }
 
 .progress-container {
@@ -34655,7 +34655,7 @@ progress::-moz-progress-bar {
 }
 
 .progress-bar {
-  background-color: #7cb342;
+  background-color: #2698BA;
 }
 
 .bibliography-year {
@@ -34679,7 +34679,7 @@ progress::-moz-progress-bar {
 nobr > em {
   font-weight: bold;
   font-style: normal;
-  color: #7cb342;
+  color: #2698BA;
 }
 
 body {
@@ -34827,7 +34827,7 @@ progress {
   vertical-align: baseline;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  background-color: #7cb342 !important;
+  background-color: #2698BA !important;
   color: #fff !important;
   position: relative;
   top: -50px;
@@ -43384,7 +43384,7 @@ footer {
 }
 
 .news a {
-  color: #7cb342;
+  color: #2698BA;
 }
 .news a:hover {
   text-decoration: underline;
@@ -43411,7 +43411,7 @@ $nav-height:                    56px;
 /* #b71c1c; */
 /************************************************************/
 .badge-notify {
-  background: #7cb342 !important;
+  background: #2698BA !important;
 }
 
 body {
@@ -43437,7 +43437,7 @@ footer a {
   color: #fafafa;
 }
 footer a:hover {
-  color: #7cb342;
+  color: #2698BA;
 }
 
 .title {
@@ -43445,7 +43445,7 @@ footer a:hover {
 }
 
 a {
-  color: #7cb342;
+  color: #2698BA;
   text-decoration: none;
 }
 a:hover {
@@ -43461,7 +43461,7 @@ a:hover {
 }
 
 .navbar-active a {
-  color: #7cb342 !important;
+  color: #2698BA !important;
 }
 
 .arrow-icon {
@@ -43591,7 +43591,7 @@ a:hover {
 }
 
 .cv h3 {
-  color: #7cb342;
+  color: #2698BA;
 }
 
 .bibliography .abbr a:hover {
@@ -43608,7 +43608,7 @@ progress {
   /* Progress bar container for Firefox/IE10+ */
   background-color: transparent;
   /* Progress bar value for IE10+ */
-  color: #7cb342;
+  color: #2698BA;
 }
 
 progress::-webkit-progress-bar {
@@ -43616,11 +43616,11 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: #7cb342;
+  background-color: #2698BA;
 }
 
 progress::-moz-progress-bar {
-  background-color: #7cb342;
+  background-color: #2698BA;
 }
 
 .progress-container {
@@ -43628,7 +43628,7 @@ progress::-moz-progress-bar {
 }
 
 .progress-bar {
-  background-color: #7cb342;
+  background-color: #2698BA;
 }
 
 .bibliography-year {
@@ -43652,7 +43652,7 @@ progress::-moz-progress-bar {
 nobr > em {
   font-weight: bold;
   font-style: normal;
-  color: #7cb342;
+  color: #2698BA;
 }
 
 pre, code {
