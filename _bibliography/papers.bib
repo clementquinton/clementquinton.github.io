@@ -1,307 +1,777 @@
----
----
-@inproceedings{VPD,
-  title={{Visual Program Distillation: Distilling Tools and Programmatic Reasoning into Vision-Language Models}},
-  author={Hu, Yushi and Stretcu, Otilia and Lu, Chun-Ta and Viswanathan, Krishnamurthy and Hata, Kenji and Luo, Enming and Krishna, Ranjay and Fuxman, Ariel},
-  booktitle={{Proceedings of the Forty-First IEEE/CVF Conference on Computer Vision and Pattern Recognition. Oral presentation}},
-  year={2024},
-  abbr = {CVPR},
-  website = {https://visual-program-distillation.github.io/},
-  arxiv = {2312.03052},
-  video = {https://www.youtube.com/watch?v=mofEOquxPjQ&ab_channel=YushiHu},
-  abstract={{Solving complex visual tasks such as "Who invented the musical instrument on the right?" involves a composition of skills: understanding space, recognizing instruments, and also retrieving prior knowledge. Recent work shows promise by decomposing such tasks using a large language model (LLM) into an executable program that invokes specialized vision models. However, generated programs are error-prone: they omit necessary steps, include spurious ones, and are unable to recover when the specialized models give incorrect outputs. Moreover, they require loading multiple models, incurring high latency and computation costs. We propose Visual Program Distillation (VPD), an instruction tuning framework that produces a vision-language model (VLM) capable of solving complex visual tasks with a single forward pass. VPD distills the reasoning ability of LLMs by using them to sample multiple candidate programs, which are then executed and verified to identify a correct one. It translates each correct program into a language description of the reasoning steps, which are then distilled into a VLM. Extensive experiments show that VPD improves the VLM's ability to count, understand spatial relations, and reason compositionally. Our VPD-trained PaLI-X outperforms all prior VLMs, achieving state-of-the-art performance across complex vision tasks, including MMBench, OK-VQA, A-OKVQA, TallyQA, POPE, and Hateful Memes. An evaluation with human annotators also confirms that VPD improves model response factuality and consistency. Finally, experiments on content moderation demonstrate that VPD is also helpful for adaptation to real-world applications with limited data.}},
-}
 
-@inproceedings{copilot,
-  title={{Modeling Collaborator: Enabling Subjective Vision Classification With Minimal Human Effort via LLM Tool-Use}},
-  author={Toubal, Imad Eddine and Avinash, Aditya and Alldrin, Neil Gordon and Dlabal, Jan and Zhou, Wenlei and Luo, Enming and Stretcu, Otilia and Xiong, Hao and Lu, Chun-Ta and Zhou, Howard and Krishna, Ranjay and Fuxman, Ariel and Duerig, Tom},
-  booktitle={{Proceedings of the Forty-First IEEE/CVF Conference on Computer Vision and Pattern Recognition}},
-  year={2024},
-  abbr = {CVPR},
-  arxiv = {2403.02626},
-  abstract={{From content moderation to wildlife conservation, the number of applications that require models to recognize nuanced or subjective visual concepts is growing. Traditionally, developing classifiers for such concepts requires substantial manual effort measured in hours, days, or even months to identify and annotate data needed for training. Even with recently proposed Agile Modeling techniques, which enable rapid bootstrapping of image classifiers, users are still required to spend 30 minutes or more of monotonous, repetitive data labeling just to train a single classifier. Drawing on Fiske's Cognitive Miser theory, we propose a new framework that alleviates manual effort by replacing human labeling with natural language interactions, reducing the total effort required to define a concept by an order of magnitude: from labeling 2,000 images to only 100 plus some natural language interactions. Our framework leverages recent advances in foundation models, both large language models and vision-language models, to carve out the concept space through conversation and by automatically labeling training data points. Most importantly, our framework eliminates the need for crowd-sourced annotations. Moreover, our framework ultimately produces lightweight classification models that are deployable in cost-sensitive scenarios. Across 15 subjective concepts and across 2 public image classification datasets, our trained models outperform traditional Agile Modeling as well as state-of-the-art zero-shot classification models like ALIGN, CLIP, CuPL, and large visual question-answering models like PaLI-X.}},
-}
-
-@inproceedings{scaling_up_llm,
-  title={Scaling Up LLM Reviews for Google Ads Content Moderation},
-  author={Qiao, Wei and Dogra, Tushar and Stretcu, Otilia and Lyu, Yu-Han and Fang, Tiantian and Kwon, Dongjin and Lu, Chun-Ta and Luo, Enming and Wang, Yuan and Chia, Chih-chun and Fuxman, Ariel and Wang, Noah and Krishna, Ranjay and Tek, Mehmet
-  },
-  booktitle={{Industry Day Proceedings of the 17th ACM International Conference on Web Search and Data Mining (WSDM)}},
-  year={2024},
-  abbr = {WSDM},
-  abstract={{Large language models (LLMs) are powerful tools for content moderation, but their inference costs and latency make them prohibitive for casual use on large datasets, such as the Google Ads repository. This study proposes a method for scaling up LLM reviews for content moderation in Google Ads. First, we use heuristics to select candidates via filtering and duplicate removal, and create clusters of ads for which we select one representative ad per cluster. We then use LLMs to review only the representative ads. Finally, we propagate the LLM decisions for the representative ads back to their clusters. This method reduces the number of reviews by more than 3 orders of magnitude while achieving a 2x recall compared to a baseline non-LLM model. The success of this approach is a strong function of the representations used in clustering and label propagation; we found that cross-modal similarity representations yield better results than uni-modal representations.}},
-}
-
-@inproceedings{obfuscation_benchmark,
-  title={Benchmarking Robustness to Adversarial Image Obfuscations},
-  author={Stimberg, Florian and Chakrabarti, Ayan and Lu, Chun-Ta and Hazimeh, Hussein and Stretcu, Otilia and Qiao, Wei and Liu, Yintao and Kaya, Merve and Rashtchian,Cyrus and Fuxman, Ariel and Tek, Mehmet and Gowal, Sven
-  },
-  booktitle={Proceedings of the Thirty-Seventh Conference on Neural Information Processing Systems},
-  year ={2023},
-  abbr = {NeurIPS},
-  code = {https://github.com/google-deepmind/image_obfuscation_benchmark},
-  arxiv = {2301.12993},
-  pdf = {obfuscation_benchmark/obfuscation_benchmark.pdf},
-  abstract={{Automated content filtering and moderation is an important tool that allows online platforms to build striving user communities that facilitate cooperation and prevent abuse. Unfortunately, resourceful actors try to bypass automated filters in a bid to post content that violate platform policies and codes of conduct. To reach this goal, these malicious actors may obfuscate policy violating images (e.g. overlay harmful images by carefully selected benign images or visual patterns) to prevent machine learning models from reaching the correct decision. In this paper, we invite researchers to tackle this specific issue and present a new image benchmark. This benchmark, based on ImageNet, simulates the type of obfuscations created by malicious actors. It goes beyond ImageNet-C and ImageNet-C¯ by proposing general, drastic, adversarial modifications that preserve the original content intent. It aims to tackle a more common adversarial threat than the one considered by Lp-norm bounded adversaries. We evaluate 33 pretrained models on the benchmark and train models with different augmentations, architectures and training methods on subsets of the obfuscations to measure generalization. We hope this benchmark will encourage researchers to test their models and methods and try to find new approaches that are more robust to these obfuscations.}},
+@article{cite-key,
+	abbr	= {NCaA},
+	author = {Sanwouo, Brell and Quinton, Cl{\'e}ment and Rouvoy, Romain},
+	date = {2024/09/30},
+	date-added = {2024-10-23 09:33:22 +0200},
+	date-modified = {2024-10-23 09:33:22 +0200},
+	id = {Sanwouo2024},
+	isbn = {1433-3058},
+	journal = {Neural Computing and Applications},
+	title = {TS-Pothole: automated imputation of missing values in univariate time series},
+	url = {https://doi.org/10.1007/s00521-024-10391-z},
+	year = {2024},
+	bdsk-url-1 = {https://doi.org/10.1007/s00521-024-10391-z},
+	pdf={https://hal.science/hal-04703773v1},
+	bibtex_show={true}
 }
 
 
-@inproceedings{agile_modeling,
-  title={Agile Modeling: From Concept to Classifier in Minutes},
-  author={Stretcu<nobr><em>*</em></nobr>, Otilia and Vendrow<nobr><em>*</em></nobr>, Edward and Hata<nobr><em>*</em></nobr>, Kenji and
-          Viswanathan, Krishnamurthy and Ferrari, Vittorio and Tavakkol, Sasan
-          and Zhou, Wenlei and Avinash, Aditya and Luo, Enming and
-          Alldrin, Neil Gordon and Bateni, MohammadHossein and Berger, Gabriel
-          and Bunner, Andrew and Lu, Chun-Ta and Rey, Javier A and
-          DeSalvo, Giulia and Krishna, Ranjay and Fuxman, Ariel
-  },
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer
-             Vision, {ICCV} 2023, Paris, France, October 2-6, 2023},
-  year={2023},
-  abbr = {ICCV},
-  video = {https://youtu.be/ctZuQq87tss},
-  code= {https://github.com/google-research/google-research/tree/master/agile_modeling},
-  pdf = {agile/Agile_Modeling_From_Concept_to_Classifier_in_Minutes_ICCV_2023_paper.pdf},
-  poster = {agile/ICCV_2023_Poster_Agile Modeling.pdf},
-  abstract={{The application of computer vision methods to nuanced, subjective concepts is growing. While crowdsourcing has served the vision community well for most objective tasks (such as labeling a “zebra”), it now falters on tasks where there is substantial subjectivity in the concept (such as identifying “gourmet tuna”). However, empowering any user to develop a classifier for their concept is technically difficult: users are neither machine learning experts nor have the patience to label thousands of examples. In reaction, we introduce the problem of Agile Modeling: the process of turning any subjective visual concept into a computer vision model through real-time user-in-the-loop interactions. We instantiate an Agile Modeling prototype for image classification and show through a user study (N=14) that users can create classifiers with minimal effort in under 30 minutes. We compare this user driven process with the traditional crowdsourcing paradigm and find that the crowd’s notion often differs from that of the user’s, especially as the concepts become more subjective. Finally, we scale our experiments with simulations of users training classifiers for ImageNet21k categories to further demonstrate the efficacy of the approach.}},
+@book{DBLP:books/hal/Quinton24,
+  abbr	= {HDR},
+  author       = {Cl{\'{e}}ment Quinton},
+  title        = {Evolving, Adapting and Optimizing Configurable Software Systems},
+  year         = {2024},
+  url          = {https://tel.archives-ouvertes.fr/tel-04424609},
+  timestamp    = {Wed, 28 Feb 2024 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/books/hal/Quinton24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://theses.hal.science/tel-04424609},
+  bibtex_show={true}
 }
 
-@inproceedings{stretcu2021c2f,
-    title = {Coarse-to-Fine Curriculum Learning},
-    author = {Stretcu, Otilia and Platanios, Emmanouil Antonios and Mitchell, Tom and Póczos, Barnabás},
-    booktitle = {ArXiv Preprint},
-    year = {2021},
-    abbr = {arXiv},
-    arxiv = {2106.04072},
-    abstract = {{When faced with learning challenging new tasks, humans often follow sequences of steps that allow them to incrementally build up the necessary skills for performing these new tasks. However, in machine learning, models are most often trained to solve the target tasks directly.Inspired by human learning, we propose a novel curriculum learning approach which decomposes challenging tasks into sequences of easier intermediate goals that are used to pre-train a model before tackling the target task. We focus on classification tasks, and design the intermediate tasks using an automatically constructed label hierarchy. We train the model at each level of the hierarchy, from coarse labels to fine labels, transferring acquired knowledge across these levels. For instance, the model will first learn to distinguish animals from objects, and then use this acquired knowledge when learning to classify among more fine-grained classes such as cat, dog, car, and truck. Most existing curriculum learning algorithms for supervised learning consist of scheduling the order in which the training examples are presented to the model. In contrast, our approach focuses on the output space of the model. We evaluate our method on several established datasets and show significant performance gains especially on classification problems with many labels. We also evaluate on a new synthetic dataset which allows us to study multiple aspects of our method.}},
+@article{DBLP:journals/computing/MetzgerQMBP24,
+  abbr	= {Computing},
+  author       = {Andreas Metzger and
+                  Cl{\'{e}}ment Quinton and
+                  Zolt{\'{a}}n {\'{A}}d{\'{a}}m Mann and
+                  Luciano Baresi and
+                  Klaus Pohl},
+  title        = {Realizing self-adaptive systems via online reinforcement learning
+                  and feature-model-guided exploration},
+  journal      = {Computing},
+  volume       = {106},
+  number       = {4},
+  pages        = {1251--1272},
+  year         = {2024},
+  url          = {https://doi.org/10.1007/s00607-022-01052-x},
+  timestamp    = {Sat, 08 Jun 2024 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/journals/computing/MetzgerQMBP24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-03595102v1},
+  bibtex_show={true},
 }
 
-@inproceedings{braintasks2020,
-    title = {Modeling Task Effects on Meaning Representation in the Brain via Zero-Shot MEG Prediction},
-    author = {Toneva<nobr><em>*</em></nobr>, Mariya and Stretcu<nobr><em>*</em></nobr>, Otilia and Póczos, Barnabás and Wehbe, Leila and Mitchell, Tom},
-    booktitle = {Proceedings of the Thirty-fourth Conference on Neural Information Processing Systems},
-    year = {2020},
-    organization = {Neural Information Processing Systems},
-    abbr = {NeurIPS},
-    pdf = {brain-tasks-neurips/arxiv.pdf},
-    arxiv = {2009.08424},
-    video = {https://youtu.be/-SXlEhSTSi8},
-    code = {https://github.com/otiliastr/brain_task_effect},
-    abstract = {{How meaning is represented in the brain is still one of the big open questions in neuroscience. Does a word (e.g., bird) always have the same representation, or does the task under which the word is processed alter its representation (answering "can you eat it?" versus "can it fly?")? The brain activity of subjects who read the same word while performing different semantic tasks has been shown to differ across tasks. However, it is still not understood how the task itself contributes to this difference. In the current work, we study Magnetoencephalography (MEG) brain recordings of participants tasked with answering questions about concrete nouns. We investigate the effect of the task (i.e. the question being asked) on the processing of the concrete noun by predicting the millisecond-resolution MEG recordings as a function of both the semantics of the noun and the task. Using this approach, we test several hypotheses about the task-stimulus interactions by comparing the zero-shot predictions made by these hypotheses for novel tasks and nouns not seen during training. We find that incorporating the task semantics significantly improves the prediction of MEG recordings, across participants. The improvement occurs 475-550ms after the participants first see the word, which corresponds to what is considered to be the ending time of semantic processing for a word. These results suggest that only the end of semantic processing of a word is task-dependent, and pose a challenge for future research to formulate new hypotheses for earlier task effects as a function of the task and stimuli.}}
+@inproceedings{DBLP:conf/ease/CoignionQR24,
+  abbr	= {EASE},
+  author       = {Tristan Coignion and
+                  Cl{\'{e}}ment Quinton and
+                  Romain Rouvoy},
+  title        = {A Performance Study of LLM-Generated Code on Leetcode},
+  booktitle    = {Proceedings of the 28th International Conference on Evaluation and
+                  Assessment in Software Engineering, {EASE} 2024, Salerno, Italy, June
+                  18-21, 2024},
+  pages        = {79--89},
+  publisher    = {{ACM}},
+  year         = {2024},
+  url          = {https://doi.org/10.1145/3661167.3661221},
+  timestamp    = {Thu, 04 Jul 2024 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/ease/CoignionQR24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-04525620},
+  bibtex_show={true},
 }
 
-@inproceedings{stoica2020AAAI,
-    title = {Contextual Parameter Generation for Knowledge Graph Link Prediction},
-    author = {Stoica<nobr><em>*</em></nobr>, George  and Stretcu*, Otilia and Platanios<nobr><em>*</em></nobr>, Emmanouil Antonios and Mitchell, Tom and Póczos, Barnabás},
-    booktitle = {Proceedings of the Thirty-fourth AAAI Conference on Artificial Intelligence},
-    year = {2020},
-    organization = {AAAI Conference on Artificial Intelligence},
-    abbr = {AAAI},
-    pdf = {coper-aaai/coper-aaai-paper.pdf},
-    poster = {coper-aaai/coper-aaai-poster.pdf},
-    supplement = {coper-aaai/coper_aaai_supplementary.pdf},
-    abstract = {{We consider the task of knowledge graph link prediction. Recent approaches tackle this problem by learning entity and relation embeddings. However, they often constrain the relationship between these embeddings to be additive (i.e., the embeddings are concatenated and then processed by a sequence of linear functions and element-wise non-linearities). We show that this type of interaction significantly limits representational power, and instead propose to use contextual parameter generation to address this limitation. More specifically, we treat relations as the context in which entities are processed to produce predictions, by using relation embeddings to generate the parameters of a model operating over entity embeddings. We apply our method on two existing link prediction methods, including the current state-of-the-art, resulting in significant performance gains and establishing a new state-of-the-art for this task. These gains are achieved while also reducing training time by up to 28 times.}}
+@inproceedings{DBLP:conf/splc/HuygheQR24,
+  abbr	= {SPLC},
+  author       = {Maxime Huyghe and
+                  Cl{\'{e}}ment Quinton and
+                  Walter Rudametkin},
+  editor       = {Maxime Cordy and
+                  Daniel Str{\"{u}}ber and
+                  M{\'{o}}nica Pinto and
+                  Iris Groher and
+                  Deepak Dhungana and
+                  Jacob Kr{\"{u}}ger and
+                  Juliana Alves Pereira and
+                  Mathieu Acher and
+                  Thomas Th{\"{u}}m and
+                  Maurice H. ter Beek and
+                  Jessie Galasso{-}Carbonnel and
+                  Paolo Arcaini and
+                  Mohammad Reza Mousavi and
+                  Xhevahire T{\"{e}}rnava and
+                  Jos{\'{e}} A. Galindo and
+                  Tao Yue and
+                  Lidia Fuentes and
+                  Jos{\'{e}} Miguel Horcas},
+  title        = {Taming the Variability of Browser Fingerprints},
+  booktitle    = {Proceedings of the 28th {ACM} International Systems and Software Product
+                  Line Conference - Volume A, {SPLC} 2024, Dommeldange, Luxembourg,
+                  September 2-6, 2024},
+  pages        = {66--71},
+  publisher    = {{ACM}},
+  year         = {2024},
+  url          = {https://doi.org/10.1145/3646548.3672591},
+  timestamp    = {Sun, 08 Sep 2024 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/splc/HuygheQR24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-04622269},
+  bibtex_show={true}
 }
 
-@inproceedings{stretcu2020baics,
-    title = {Coarse-to-Fine Curriculum Learning for Classification},
-    author = {Stretcu, Otilia and Platanios, Emmanouil Antonios and Mitchell, Tom and Póczos, Barnabás},
-    booktitle = {International Conference on Learning Representations (ICLR) Workshop on Bridging AI and Cognitive Science (BAICS)},
-    year = {2020},
-    abbr = {ICLR},
-    pdf = {coarse-to-fine/coarse-to-fine-baics.pdf},
-    abstract = {{When faced with learning challenging new tasks, humans often follow sequences of steps that allow them to incrementally build up the necessary skills for performing these new tasks. However, in machine learning, models are most often trained to solve the target tasks directly. Inspired by human learning, we propose a novel curriculum learning approach which decomposes challenging tasks into sequences of easier intermediate goals, that are used to pre-train a model before tackling the original task. We focus on classification tasks, and design the intermediate tasks using an automatically constructed label hierarchy. We train the model at each level of the hierarchy, from coarse labels to fine labels, transferring acquired knowledge across these levels. For instance, the model will first learn to distinguish animals from objects, and use this acquired knowledge when learning to classify more fine-grained classes such as "cat", "dog", "car", and "truck". We evaluate our method on several established datasets and show performance gains of up to 7% increase in classification accuracy.}},
-    video = {https://youtu.be/hkY-Qlh4Hhc},
-    code = {https://github.com/otiliastr/coarse-to-fine-curriculum}
+@inproceedings{DBLP:conf/wcre/BonvoisinQR24,
+  abbr	= {SANER},
+  author       = {Alexandre Bonvoisin and
+                  Cl{\'{e}}ment Quinton and
+                  Romain Rouvoy},
+  title        = {Understanding the Performance-Energy Tradeoffs of Object-Relational
+                  Mapping Frameworks},
+  booktitle    = {{IEEE} International Conference on Software Analysis, Evolution and
+                  Reengineering, {SANER} 2024, Rovaniemi, Finland, March 12-15, 2024},
+  pages        = {626--636},
+  publisher    = {{IEEE}},
+  year         = {2024},
+  url          = {https://doi.org/10.1109/SANER60148.2024.00069},
+  timestamp    = {Tue, 30 Jul 2024 11:08:59 +0200},
+  biburl       = {https://dblp.org/rec/conf/wcre/BonvoisinQR24.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-04401643v1},
+  bibtex_show={true}
 }
 
-@inproceedings{stretcu2019graph,
-    title = {Graph Agreement Models for Semi-Supervised Learning},
-    author = {Stretcu, Otilia and Viswanathan, Krishnamurthy and Movshovitz-Attias, Dana and Platanios, Emmanouil Antonios and Tomkins, Andrew and Ravi, Sujith},
-    booktitle = {Proceedings of the Thirty-third Conference on Neural Information Processing Systems},
-    year = {2019},
-    organization = {Neural Information Processing Systems},
-    url = {https://papers.nips.cc/paper/9076-graph-agreement-models-for-semi-supervised-learning},
-    abbr = {NeurIPS},
-    pdf = {gam/9076-graph-agreement-models-for-semi-supervised-learning.pdf},
-    poster = {gam/gam-poster.pdf},
-    supplement = {gam/appendix.pdf},
-    code = {https://github.com/tensorflow/neural-structured-learning/tree/master/research/gam},
-    abstract = {{Graph-based algorithms are among the most successful paradigms for solving semi-supervised learning tasks. Recent work on graph convolutional networks and neural graph learning methods has successfully combined the expressiveness of neural networks with graph structures. We propose a technique that, when applied to these methods, achieves state-of-the-art results on semi-supervised learning datasets. Traditional graph-based algorithms, such as label propagation, were designed with the underlying assumption that the label of a node can be imputed from that of the neighboring nodes. However, real-world graphs are either noisy or have edges that do not correspond to label agreement. To address this, we propose Graph Agreement Models (GAM), which introduces an auxiliary model that predicts the probability of two nodes sharing the same label as a learned function of their features. The agreement model is used when training a node classification model by encouraging agreement only for the pairs of nodes it deems likely to have the same label, thus guiding its parameters to better local optima. The classification and agreement models are trained jointly in a co-training fashion. Moreover, GAM can also be applied to any semi-supervised classification problem, by inducing a graph whenever one is not provided. We demonstrate that our method achieves a relative improvement of up to 72% for various node classification models, and obtains state-of-the-art results on multiple established datasets.}}
+
+@article{DBLP:journals/corr/abs-2409-16480,
+  abbr	= {arXiv},
+  author       = {{\'{E}}douard Gu{\'{e}}gain and
+                  Alexandre Bonvoisin and
+                  Cl{\'{e}}ment Quinton and
+                  Mathieu Acher and
+                  Romain Rouvoy},
+  title        = {Exploring Performance Trade-offs in JHipster},
+  journal      = {CoRR},
+  volume       = {abs/2409.16480},
+  year         = {2024},
+  url          = {https://doi.org/10.48550/arXiv.2409.16480},
+  doi          = {10.48550/ARXIV.2409.16480},
+  eprinttype    = {arXiv},
+  eprint       = {2409.16480},
+  timestamp    = {Wed, 16 Oct 2024 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2409-16480.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 
-@inproceedings{zhao2019efficient,
-    title = {Efficient Multitask Feature and Relationship Learning},
-    author = {Zhao, Han and Stretcu, Otilia and Smola, Alexander J. and Gordon, Geoffrey J.},
-    booktitle = {Proceedings of the 2019 Annual Conference on Uncertainty in Artificial Intelligence},
-    year = {2019},
-    organization = {Association for Uncertainty in Artificial Intelligence (UAI)},
-    abbr = {UAI},
-    pdf = {fetr-uai/275_paper.pdf},
-    poster = {fetr-uai/fetr-poster.pdf},
-    supplement = {fetr-uai/275_supplement.pdf},
-    abstract = {{We consider a multitask learning problem, in which several predictors are learned jointly. Prior research has shown that learning the relations between tasks, and between the input features, together with the predictor, can lead to better generalization and interpretability, which proved to be useful for applications in many domains. In this paper, we consider a formulation of multitask learning that learns the relationships both between tasks and between features, represented through a task covariance and a feature covariance matrix, respectively. First, we demonstrate that existing methods proposed for this problem present an issue that may lead to ill-posed optimization. We then propose an alternative formulation, as well as an efficient algorithm to optimize it. Using ideas from optimization and graph theory, we propose an efficient coordinate-wise minimization algorithm that has a closed form solution for each block subproblem. Our experiments show that the proposed optimization method is orders of magnitude faster than its competitors. We also provide a nonlinear extension that is able to achieve better generalization than existing methods.}}
+@inproceedings{DBLP:conf/caise/GuegainTQ23,
+  abbr	= {CAiSE},
+  author       = {{\'{E}}douard Gu{\'{e}}gain and
+                  Amir Taherkordi and
+                  Cl{\'{e}}ment Quinton},
+  editor       = {Marta Indulska and
+                  Iris Reinhartz{-}Berger and
+                  Carlos Cetina and
+                  Oscar Pastor},
+  title        = {Configuration Optimization with Limited Functional Impact},
+  booktitle    = {Advanced Information Systems Engineering - 35th International Conference,
+                  CAiSE 2023, Zaragoza, Spain, June 12-16, 2023, Proceedings},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {13901},
+  pages        = {53--68},
+  publisher    = {Springer},
+  year         = {2023},
+  url          = {https://doi.org/10.1007/978-3-031-34560-9\_4},
+  timestamp    = {Thu, 15 Jun 2023 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/caise/GuegainTQ23.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-04034888v1},
+  bibtex_show={true}
 }
 
-@article{ohbm,
-    title = {Investigating Task Effects on Brain Activity During Stimulus Presentation in MEG},
-    author = {Stretcu<nobr><em>*</em></nobr>, Otilia and Toneva<nobr><em>*</em></nobr>, Mariya and Póczos, Barnabás  and Mitchell, Tom},
-    journal = {Human Brain Mapping Conference},
-    year = {2019},
-    abbr = {HBM},
-    poster = {ohbm/ohbm-poster.pdf},
-    abstract = {{Recorded brain activity of subjects who perceive the same stimulus (e.g. a word) while performing
-        different semantic tasks (e.g. identifying whether the word belongs to a particular category) has been shown
-        to differ across tasks. However, it is not well understood how precisely the task contributes to this brain
-        activity. In the current work, we propose multiple hypotheses of how possible interactions between the task and
-        stimulus semantics can be related to the observed brain activity. We test these hypotheses by designing machine
-        learning models to represent each hypothesis, training them to predict the recorded brain activity, and
-        comparing their performance. We show that incorporating task semantics improves the prediction of
-        single-trial MEG data by an average of 10% across subjects.}},
+@inproceedings{DBLP:conf/kbse/GuegainTQ23,
+  abbr	= {ASYDE},
+  author       = {{\'{E}}douard Gu{\'{e}}gain and
+                  Amir Taherkordi and
+                  Cl{\'{e}}ment Quinton},
+  title        = {{ICO:} {A} Platform for Optimizing Highly Configurable Systems},
+  booktitle    = {38th {IEEE/ACM} International Conference on Automated Software Engineering,
+                  {ASE} 2023 - Workshops, Luxembourg, September 11-15, 2023},
+  pages        = {62--67},
+  publisher    = {{IEEE}},
+  year         = {2023},
+  url          = {https://doi.org/10.1109/ASEW60602.2023.00013},
+  timestamp    = {Sun, 04 Aug 2024 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/kbse/GuegainTQ23.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-04213194/},
+  bibtex_show={true}
 }
 
-@inproceedings{platanios2019curriculummt,
-    title = {Competence-based Curriculum Learning for Neural Machine Translation},
-    author = {Platanios, Emmanouil Antonios and Stretcu, Otilia and Neubig, Graham and Póczos, Barnabás and Mitchell, Tom},
-    booktitle = {Proceedings of the 2019 Annual Conference of the North American Chapter of the Association for Computational Linguistics},
-    year = {2019},
-    organization = {Association for Computational Linguistics (ACL)},
-    abbr = {NAACL},
-    arxiv = {1903.09848},
-    code = {https://github.com/eaplatanios/curriculum},
-    abstract = {{Current state-of-the-art NMT systems use large neural networks that are not only slow to train, but also often require many heuristics and optimization tricks, such as specialized learning rate schedules and large batch sizes. This is undesirable as it requires extensive hyperparameter tuning. In this paper, we propose a curriculum learning framework for NMT that reduces training time, reduces the need for specialized heuristics or large batch sizes, and results in overall better performance. Our framework consists of a principled way of deciding which training samples are shown to the model at different times during training, based on the estimated difficulty of a sample and the current competence of the model. Filtering training samples in this manner prevents the model from getting stuck in bad local optima, making it converge faster and reach a better solution than the common approach of uniformly sampling training examples. Furthermore, the proposed method can be easily applied to existing NMT models by simply modifying their input data pipelines. We show that our framework can help improve the training time and the performance of both recurrent neural network models and Transformers, achieving up to a 70% decrease in training time, while at the same time obtaining accuracy improvements of up to 2.2 BLEU.}}
+@article{DBLP:journals/corr/abs-2302-06867,
+  abbr	= {arXiv},
+  author       = {Pierre Bourhis and
+                  Laurence Duchien and
+                  J{\'{e}}r{\'{e}}mie Dusart and
+                  Emmanuel Lonca and
+                  Pierre Marquis and
+                  Cl{\'{e}}ment Quinton},
+  title        = {Reasoning on Feature Models: Compilation-Based vs. Direct Approaches},
+  journal      = {CoRR},
+  volume       = {abs/2302.06867},
+  year         = {2023},
+  url          = {https://doi.org/10.48550/arXiv.2302.06867},
+  doi          = {10.48550/ARXIV.2302.06867},
+  eprinttype    = {arXiv},
+  eprint       = {2302.06867},
+  timestamp    = {Mon, 20 Feb 2023 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2302-06867.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://arxiv.org/abs/2302.06867}  
 }
 
-@article{Chrabaszcz2019SubthalamicNA,
-    title = {Subthalamic nucleus and sensorimotor cortex activity during speech production},
-    author = {Chrabaszcz, Anna and Neumann,  W. J. and Stretcu, Otilia and Lipski, Witold J. and Bush, Alan and
-    Dastolfo-Hromack, Christina and Wang, Dengyu and Crammond, Donald J. and Shaiman, Susan and Dickey, Michael Walsh
-    and Holt, Lori L. and Turner, Robert S. and Fiez, Julie A. and Richardson, R. Mark},
-    journal = {The Journal of Neuroscience: the official journal of the Society for Neuroscience},
-    year = {2019},
-    abbr = {JNeurosci},
-    website = {https://www.ncbi.nlm.nih.gov/pubmed/30700532},
-    abstract = {{The sensorimotor cortex is somatotopically organized to represent the vocal tract articulators, such as lips, tongue, larynx, and jaw. How speech and articulatory features are encoded at the subcortical level, however, remains largely unknown. We analyzed local field potential (LFP) recordings from the subthalamic nucleus (STN) and simultaneous electrocorticography recordings from the sensorimotor cortex of 11 human subjects (1 female) with Parkinson's disease during implantation of deep brain stimulation (DBS) electrodes, while they read aloud three-phoneme words. The initial phonemes involved either articulation primarily with the tongue (coronal consonants) or the lips (labial consonants). We observed significant increases in high gamma (60-150 Hz) power in both the STN and the sensorimotor cortex that began before speech onset and persisted for the duration of speech articulation. As expected from previous reports, in the sensorimotor cortex, the primary articulators involved in the production of the initial consonants were topographically represented by high gamma activity. We found that STN high gamma activity also demonstrated specificity for the primary articulator, although no clear topography was observed. In general, subthalamic high gamma activity varied along the ventral-dorsal trajectory of the electrodes, with greater high gamma power recorded in the dorsal locations of the STN. Interestingly, the majority of significant articulator-discriminative activity in the STN occurred prior to that in sensorimotor cortex. These results demonstrate that articulator-specific speech information is contained within high gamma activity of the STN, but with different spatial and temporal organization compared to similar information encoded in the sensorimotor cortex. Clinical and electrophysiological evidence suggest that the subthalamic nucleus is involved in speech, however, this important basal ganglia node is ignored in current models of speech production. We previously showed that subthalamic nucleus neurons differentially encode early and late aspects of speech production, but no previous studies have examined subthalamic functional organization for speech articulators. Using simultaneous local field potential recordings from the sensorimotor cortex and the subthalamic nucleus in patients with Parkinson's disease undergoing deep brain stimulation surgery, we discovered that subthalamic nucleus high gamma activity tracks speech production at the level of vocal tract articulators, prior to the onset of vocalization and often prior to related cortical encoding.}},
+@proceedings{DBLP:conf/splc/2022b,
+  abbr	= {SPLC},
+  editor       = {Alexander Felfernig and
+                  Lidia Fuentes and
+                  Jane Cleland{-}Huang and
+                  Wesley K. G. Assun{\c{c}}{\~{a}}o and
+                  Cl{\'{e}}ment Quinton and
+                  Jianmei Guo and
+                  Klaus Schmid and
+                  Marianne Huchard and
+                  Inmaculada Ayala and
+                  Jos{\'{e}} Miguel Rojas and
+                  Viet{-}Man Le and
+                  Jos{\'{e}} Miguel Horcas},
+  title        = {{SPLC} '22: 26th {ACM} International Systems and Software Product
+                  Line Conference, Graz, Austria, September 12 - 16, 2022, Volume {B}},
+  publisher    = {{ACM}},
+  year         = {2022},
+  url          = {https://doi.org/10.1145/3503229},
+  isbn         = {978-1-4503-9206-8},
+  timestamp    = {Fri, 26 Aug 2022 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/splc/2022b.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 
-@inproceedings{fu2017brainzoom,
-    title = {BrainZoom: High Resolution Reconstruction from Multi-modal Brain Signals},
-    author = {Fu<nobr><em>*</em></nobr>, Xiao and Huang<nobr><em>*</em></nobr>, Kejun and Stretcu<nobr><em>*</em></nobr>, Otilia and Song<nobr><em>*</em></nobr>, Hyun Ah and Papalexakis, Evangelos and Talukdar, Partha and Mitchell, Tom and Sidiropoulo, Nicholas and Faloutsos, Christos and Póczos, Barnabás},
-    booktitle = {Proceedings of the 2017 SIAM International Conference on Data Mining},
-    pages = {216--227},
-    year = {2017},
-    organization = {SIAM},
-    abbr = {SDM},
-    pdf = {brainzoom/siam_paper.pdf},
-    abstract = {{ How close can we zoom in to observe brain activity? Our understanding is limited by the resolution of imaging modalities that exhibit good spatial but poor temporal resolution, or vice-versa. In this paper, we propose BRAINZOOM, an efficient imaging algorithm that cross-leverages multi-modal brain signals. BRAINZOOM (a) constructs high resolution brain images from multi-modal signals, (b) is scalable, and (c) is flexible in that it can easily incorporate various priors on the brain activities, such as sparsity, low rank, or smoothness. We carefully formulate the problem to tackle nonlinearity in the measurements (via variable splitting) and auto-scale between different modal signals, and judiciously design an inexact alternating optimization-based algorithmic framework to handle the problem with provable convergence guarantees. Our experiments using a popular realistic brain signal simulator to generate fMRI and MEG demonstrate that high spatio-temporal resolution brain imaging is possible from these two modalities. The experiments also suggest that smoothness seems to be the best prior, among several we tried. }}
+@article{DBLP:journals/corr/abs-2202-05938,
+  abbr	= {arXiv},
+  author       = {Pierre Bourhis and
+                  Laurence Duchien and
+                  J{\'{e}}r{\'{e}}mie Dusart and
+                  Emmanuel Lonca and
+                  Pierre Marquis and
+                  Cl{\'{e}}ment Quinton},
+  title        = {Pseudo Polynomial-Time Top-k Algorithms for d-DNNF Circuits},
+  journal      = {CoRR},
+  volume       = {abs/2202.05938},
+  year         = {2022},
+  url          = {https://arxiv.org/abs/2202.05938},
+  eprinttype    = {arXiv},
+  eprint       = {2202.05938},
+  timestamp    = {Sun, 02 Oct 2022 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2202-05938.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://arxiv.org/abs/2202.05938 } 
 }
 
-@article{zhao2017efficient,
-    title = {Efficient Multi-task Feature and Relationship Learning},
-    author = {Zhao, Han and Stretcu, Otilia and Negrinho, Renato and Smola, Alex and Gordon, Geoff},
-    journal = {In Neural Information Processing Systems Workshop on Learning With Limited Data},
-    year = {2017},
-    pdf = {fetr/LLD_2017_paper_15.pdf},
-    arxiv = {1702.04423},
-    abbr = {NeurIPS},
-    abstract = {{ We propose a multi-convex framework for multitask learning that improves pre- dictions by learning relationships both between tasks and between features. Our framework is a generalization of related methods, that either learn task relationships, or feature relationships, but not both. We start with a hierarchical Bayesian model, and use the empirical Bayes method to transform the underlying inference problem into a multi-convex problem. To tackle the multi-convex optimization problem, we propose a block coordinate-wise minimization algorithm that has a closed form solution for each block subproblem. Naively these solutions would be expensive to compute, but by using the theory of doubly stochastic matrices, we are able to reduce the covariance learning subproblem to a minimum-weight perfect matching problem on a complete bipartite graph, and solve it analytically and efficiently. To solve the weight learning subproblem, we propose three different strategies that can be used no matter whether the instances are shared by multiple tasks or not. We demonstrate the efficiency of our method on both synthetic datasets and real-world datasets. Experiments show that the proposed optimization method is orders of magnitude faster than the previous projected gradient method, and our model is able to exploit the correlation structures among multiple tasks and features. }},
-    poster = {fetr/poster_fetr_lld.pdf}
+@article{DBLP:journals/smr/QuintonVRBGS21,
+  abbr	= {JSEP},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Michael Vierhauser and
+                  Rick Rabiser and
+                  Luciano Baresi and
+                  Paul Gr{\"{u}}nbacher and
+                  Christian Schuhmayer},
+  title        = {Evolution in dynamic software product lines},
+  journal      = {J. Softw. Evol. Process.},
+  volume       = {33},
+  number       = {2},
+  year         = {2021},
+  url          = {https://doi.org/10.1002/smr.2293},
+  timestamp    = {Sat, 09 Apr 2022 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/journals/smr/QuintonVRBGS21.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-02952741v2 },
+  bibtex_show={true}
 }
 
-@article{Stretcu2017UnderstandingTN,
-    title = {Understanding the neural basis of speech production using Machine Learning},
-    author = {Stretcu, Otilia},
-    journal = {Master Thesis at Carnegie Mellon University},
-    year = {2017},
-    website = {https://www.ml.cmu.edu/research/dap-papers/F17/dap-stretcu-otilia.pdf},
-    abbr = {CMU},
-    abstract = {{<b>Background.</b> Understanding how neurons act together to produce speech is still an open problem. Several studies have attempted to decode different aspects of speech from the cortex neural activity, while a person is speaking [1, 8], but evidence from the medical domain [2] suggests that other brain regions, such as the subthalamic nucleus (STN), may also be involved in speech production. <br/>
-
-                <br/><b>Aim.</b> We explore the problem of decoding properties of speech (e.g. volume, manner, used articulators) from neural activity recordings. From a neuroscience perspective, the goal is to understand
-                which properties are encoded in different parts of the cortex and STN. From a machine learning
-                (ML) perspective, we are interested discover what models are best at extracting relevant information
-                from the scarce and noisy neural activity data.<br/>
-
-                <br/><b>Data</b>. The brain signals are recorded from 14 human subjects, while reading out loud words. The
-                data consists of ECoG recordings from the ventral primary motor and primary sensory cortical
-                areas, and Local Field Potentials from the STN.<br/>
-
-                <br/><b>Proposed Approach.</b> We approach several decoding tasks: (1) predicting when a person is
-                speaking or not, from their neural activity, (2) predicting the manner of speech (e.g. nasal, plosive)
-                and what articulators (e.g. tongue, lips) are used, and (3) predicting the volume/loudness of the
-                speech. For each of these tasks, we apply a series of ML methods, from simple regression models
-                (e.g. ridge regression) to deep learning models (e.g. recurrent neural networks). We apply these
-                models on different levels of preprocessing of the data, from electrode signals in time domain to
-                particular frequency bands. The goal is to understand which models are able to discover interesting
-                patterns, with different levels of domain knowledge required for preprocessing. Finally, we use our
-                best models to discover which areas of the brain encode different kinds of information about speech
-                production.<br/>
-
-                <br/><b>Results.</b> Our analysis shows that machine learning models are able to discover different speech
-                features from the neural activity. We were able to classify when a subject is speaking or not from
-                their neural activity in the primary motor and primary sensory cortex with up to 96% accuracy, and
-                up to 80% accuracy from the STN (an area whose connection to speech production is not entirely
-                understood). We were also able to decode certain features of speech (e.g. voicing, manner) and
-                inspect the brain regions and time points that contribute to the prediction. From a ML perspective,
-                we observe that even simple models overfit easily on our dataset due to the low-sample, highdimensionality problem, and that parameter tuning and proper regularization methods are crucial
-                in making accurate predictions. Finally, we recommend neural network based models if time and
-                computation resources are available for tuning the parameters, and simple models otherwise.<br/>
-
-                <br/><b>Broader impacts.</b> Our work has important practical applications in the medical domain. For example, a neural decoder can be used in neuroprosthetics to enable communication for the impaired.
-                Moreover, understanding the involvement of the STN in speech can improve the deep brain stimulation techniques used for treating Parkinson’s disease patients. More generally, our work provides
-                an useful overview of which ML models are suitable in dealing with different modalities of brain
-                data, which can facilitate further neuroscience studies.<br/>
-
-                <br/><b>Keywords:</b> neuroscience, speech production, ECoG, Local Field Potentials, machine learning.}},
+@inproceedings{DBLP:conf/splc/GuegainQR21,
+  abbr	= {SPLC},
+  author       = {{\'{E}}douard Gu{\'{e}}gain and
+                  Cl{\'{e}}ment Quinton and
+                  Romain Rouvoy},
+  editor       = {Mohammad Reza Mousavi and
+                  Pierre{-}Yves Schobbens},
+  title        = {On reducing the energy consumption of software product lines},
+  booktitle    = {{SPLC} '21: 25th {ACM} International Systems and Software Product
+                  Line Conference, Leicester, United Kingdom, September 6-11, 2021,
+                  Volume {A}},
+  pages        = {89--99},
+  publisher    = {{ACM}},
+  year         = {2021},
+  url          = {https://doi.org/10.1145/3461001.3471142},
+  timestamp    = {Sun, 04 Aug 2024 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/splc/GuegainQR21.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-03269168v1},
+  bibtex_show={true}
 }
 
-@inproceedings{stretcu2015multiple,
-    title = {Multiple Frames Matching for Object Discovery in Video},
-    author = {Stretcu, Otilia and Leordeanu, Marius},
-    booktitle = {Proceedings of the 26th British Machine Vision Conference (BMVC)},
-    volume = {1},
-    number = {2},
-    pages = {3},
-    year = {2015},
-    abbr = {BMVC},
-    pdf = {videoPCA/bmvc_videopca.pdf},
-    website = {https://sites.google.com/site/multipleframesmatching/},
-    abstract = {{ Automatic discovery of foreground objects in video sequences is an important prob- lem in computer vision with applications to object tracking, video segmentation and clas- sification. We propose an efficient method for the discovery of object bounding boxes and the corresponding soft-segmentation masks across multiple video frames. We offer a graph matching formulation for bounding box selection and refinement using second and higher order terms. Our objective function takes into consideration local, frame-based information, as well as spatiotemporal and appearance consistency over multiple frames. First, we find an initial pool of candidate boxes using a novel and fast foreground esti- mation method in video, based on Principal Component Analysis. Then, we match the boxes across multiple frames using pairwise geometric and appearance terms. Finally, we refine their location and soft-segmentation using higher order potentials that estab- lish appearance regularity over multiple frames. We test our method on the large scale YouTube-Objects dataset and obtain state-of-the-art results on several object classes. }},
-    presentation = {http://www.bmva.org/bmvc/2015/papers/paper186/index.html},
-    code = {https://drive.google.com/drive/folders/0B7CshFGxfi_5aW13T2h5RDZ3djQ}
+@inproceedings{DBLP:conf/icsoc/MetzgerQMBP20,
+  abbr	= {ICSOC},
+  author       = {Andreas Metzger and
+                  Cl{\'{e}}ment Quinton and
+                  Zolt{\'{a}}n {\'{A}}d{\'{a}}m Mann and
+                  Luciano Baresi and
+                  Klaus Pohl},
+  editor       = {Eleanna Kafeza and
+                  Boualem Benatallah and
+                  Fabio Martinelli and
+                  Hakim Hacid and
+                  Athman Bouguettaya and
+                  Hamid Motahari},
+  title        = {Feature Model-Guided Online Reinforcement Learning for Self-Adaptive
+                  Services},
+  booktitle    = {Service-Oriented Computing - 18th International Conference, {ICSOC}
+                  2020, Dubai, United Arab Emirates, December 14-17, 2020, Proceedings},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {12571},
+  pages        = {269--286},
+  publisher    = {Springer},
+  year         = {2020},
+  url          = {https://doi.org/10.1007/978-3-030-65310-1\_20},
+  timestamp    = {Thu, 31 Dec 2020 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/conf/icsoc/MetzgerQMBP20.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  award={Best Paper Award},
+  award_name={Award},
+  pdf={https://hal.science/hal-02982029v2},
+  bibtex_show={true}
 }
 
-@article{emim,
-    title = {A multi-method driven evaluation of molecular imaging techniques},
-    author = {Stretcu, Otilia and Shavit, Yoli and Lio, Pietro},
-    journal = {Poster presentation at the 10th annual meeting of the European Society for Molecular Imaging (ESMI)},
-    year = {2015},
-    abbr = {EMIM},
-    organization = {European Society for Molecular Imaging (ESMI)},
-    abstract = {{In the past decade, we have witnessed significant advancements in image analysis methods.
-        However, the analysis of molecular images such as fluorescent in situ hybridization (FISH) still
-        relies heavily on manual evaluation by experts. For automated image analysis to be adopted by
-        clinicians there is a need for more reliable tools that can extract rich information from molecular
-        images. The first step in developing such tools is to evaluate the performance of state-of-the-art
-        image analysis methods. This assessment could be further used to develop of a multi-method
-        approach that would integrate partial information extracted by each constituent method, to build an
-        augmented microscopic reality.
-        We investigate a set of techniques which have shown promising results in the analysis of images
-        that share many similarities with molecular images. Namely, wavelets, that have successfully been
-        used to describe structural patterns in astronomical images [1], and Markov Random Fields. We
-        apply them to a benchmark of molecular FISH images and evaluate their performance with respect
-        to two key tasks: (1) denoising and thresholding; (2) segmentation and detection of various
-        structures(e.g. interphase nuclei, metaphase chromosomes, multi-colored probes). We further test
-        whether data from high-throughput Chromosome Conformation Capture (Hi-C) could enrich the
-        information obtained.
-        We show the results of our analysis and identify which techniques are best for describing certain
-        properties of images (e.g. intensity, edges). We further discuss methodologies of integrating
-        complementary methods and data to improve the overall performance.
-        The integration of multiple methods can result in overall improvement with respected to key tasks
-        in the analysis of molecular images. Coupling a multi-method approach with Chromosome
-        Conformation Capture data can help to extract additional information from images.
-        <br/><br/>
-        [1] Mertens, F., and Lobanov A. (2014) Wavelet-based decomposition and analysis of structural
-        patterns in astronomical images. arXiv preprintarXiv:1410.3732}},
-    poster = {emim/emim_poster.pdf}
+@inproceedings{DBLP:conf/icsm/KhalilCMDQ19,
+  abbr	= {ICSME},
+  author       = {Zeinab Abou Khalil and
+                  Eleni Constantinou and
+                  Tom Mens and
+                  Laurence Duchien and
+                  Cl{\'{e}}ment Quinton},
+  title        = {A Longitudinal Analysis of Bug Handling Across Eclipse Releases},
+  booktitle    = {2019 {IEEE} International Conference on Software Maintenance and Evolution,
+                  {ICSME} 2019, Cleveland, OH, USA, September 29 - October 4, 2019},
+  pages        = {1--12},
+  publisher    = {{IEEE}},
+  year         = {2019},
+  url          = {https://doi.org/10.1109/ICSME.2019.00010},
+  timestamp    = {Sun, 04 Aug 2024 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/icsm/KhalilCMDQ19.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-02179172v1},
+  bibtex_show={true}
 }
+
+@proceedings{DBLP:conf/ecsa/2019c,
+  abbr	= {ECSA},
+  editor       = {Laurence Duchien and
+                  Anne Koziolek and
+                  Raffaela Mirandola and
+                  Elena Maria Navarro Mart{\'{\i}}nez and
+                  Cl{\'{e}}ment Quinton and
+                  Riccardo Scandariato and
+                  Patrizia Scandurra and
+                  Catia Trubiani and
+                  Danny Weyns},
+  title        = {Proceedings of the 13th European Conference on Software Architecture,
+                  {ECSA} 2019, Paris, France, September 9-13, 2019, Companion Proceedings
+                  (Proceedings Volume 2),},
+  publisher    = {{ACM}},
+  year         = {2019},
+  url          = {https://doi.org/10.1145/3344948},
+  isbn         = {978-1-4503-7142-1},
+  timestamp    = {Fri, 24 Sep 2021 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/ecsa/2019c.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-02982029v2},
+  bibtex_show={true}
+}
+
+
+@inproceedings{DBLP:conf/splc/Quinton18,
+  abbr	= {SPLC},
+  author       = {Cl{\'{e}}ment Quinton},
+  editor       = {Philippe Collet and
+                  Jianmei Guo and
+                  Jabier Martinez and
+                  Christoph Seidl and
+                  Julia Rubin and
+                  Oscar D{\'{\i}}az and
+                  Mukelabai Mukelabai and
+                  Thorsten Berger},
+  title        = {Giving students a glimpse of the {SPL} lifecycle in six hours: challenge
+                  accepted!},
+  booktitle    = {Proceeedings of the 22nd International Systems and Software Product
+                  Line Conference - Volume 2, {SPLC} 2018, Gothenburg, Sweden, September
+                  10-14, 2018},
+  pages        = {42--43},
+  publisher    = {{ACM}},
+  year         = {2018},
+  url          = {https://doi.org/10.1145/3236405.3237203},
+  timestamp    = {Tue, 06 Aug 2024 17:12:58 +0200},
+  biburl       = {https://dblp.org/rec/conf/splc/Quinton18.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://doi.org/10.1145/3236405.3237203},
+  bibtex_show={true}
+}
+
+@article{DBLP:journals/spe/Quinton0D16,
+  abbr	= {SPE},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Daniel Romero and
+                  Laurence Duchien},
+  title        = {{SALOON:} a platform for selecting and configuring cloud environments},
+  journal      = {Softw. Pract. Exp.},
+  volume       = {46},
+  number       = {1},
+  pages        = {55--78},
+  year         = {2016},
+  url          = {https://doi.org/10.1002/spe.2311},
+  timestamp    = {Thu, 09 Apr 2020 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/journals/spe/Quinton0D16.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-01103560v1},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/icse/ShariflooMQBP16,
+  abbr	= {SEAMS},
+  author       = {Amir Molzam Sharifloo and
+                  Andreas Metzger and
+                  Cl{\'{e}}ment Quinton and
+                  Luciano Baresi and
+                  Klaus Pohl},
+  title        = {Learning and evolution in dynamic software product lines},
+  booktitle    = {Proceedings of the 11th International Symposium on Software Engineering
+                  for Adaptive and Self-Managing Systems, SEAMS@ICSE 2016, Austin, Texas,
+                  USA, May 14-22, 2016},
+  pages        = {158--164},
+  publisher    = {{ACM}},
+  year         = {2016},
+  url          = {https://doi.org/10.1145/2897053.2897058},
+  timestamp    = {Wed, 16 Oct 2019 14:14:49 +0200},
+  biburl       = {https://dblp.org/rec/conf/icse/ShariflooMQBP16.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-01280837v1},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/ecsa/0002QDSV15,
+  abbr	= {ECSA},
+  author       = {Daniel Romero and
+                  Cl{\'{e}}ment Quinton and
+                  Laurence Duchien and
+                  Lionel Seinturier and
+                  Carolina Valdez},
+  editor       = {Danny Weyns and
+                  Raffaela Mirandola and
+                  Ivica Crnkovic},
+  title        = {SmartyCo: Managing Cyber-Physical Systems for Smart Environments},
+  booktitle    = {Software Architecture - 9th European Conference, {ECSA} 2015, Dubrovnik/Cavtat,
+                  Croatia, September 7-11, 2015, Proceedings},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {9278},
+  pages        = {294--302},
+  publisher    = {Springer},
+  year         = {2015},
+  url          = {https://doi.org/10.1007/978-3-319-23727-5\_25},
+  timestamp    = {Tue, 29 Dec 2020 18:30:53 +0100},
+  biburl       = {https://dblp.org/rec/conf/ecsa/0002QDSV15.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-01172057v1},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/icse/BaresiQ15,
+  abbr	= {SEAMS},
+  author       = {Luciano Baresi and
+                  Cl{\'{e}}ment Quinton},
+  editor       = {Paola Inverardi and
+                  Bradley R. Schmerl},
+  title        = {Dynamically Evolving the Structural Variability of Dynamic Software
+                  Product Lines},
+  booktitle    = {10th {IEEE/ACM} International Symposium on Software Engineering for
+                  Adaptive and Self-Managing Systems, {SEAMS} 2015, Florence, Italy,
+                  May 18-19, 2015},
+  pages        = {57--63},
+  publisher    = {{IEEE} Computer Society},
+  year         = {2015},
+  url          = {https://doi.org/10.1109/SEAMS.2015.24},
+  timestamp    = {Thu, 23 Mar 2023 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/conf/icse/BaresiQ15.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-01120248v1},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/splc/QuintonRVGB15,
+  abbr	= {SPLC},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Rick Rabiser and
+                  Michael Vierhauser and
+                  Paul Gr{\"{u}}nbacher and
+                  Luciano Baresi},
+  editor       = {Douglas C. Schmidt},
+  title        = {Evolution in dynamic software product lines: challenges and perspectives},
+  booktitle    = {Proceedings of the 19th International Conference on Software Product
+                  Line, {SPLC} 2015, Nashville, TN, USA, July 20-24, 2015},
+  pages        = {126--130},
+  publisher    = {{ACM}},
+  year         = {2015},
+  url          = {https://doi.org/10.1145/2791060.2791101},
+  timestamp    = {Sun, 25 Oct 2020 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/splc/QuintonRVGB15.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-01180935v1},
+  bibtex_show={true}
+}
+
+@phdthesis{DBLP:phd/hal/Quinton14,
+  abbr	= {Thesis},
+  author       = {Cl{\'{e}}ment Quinton},
+  title        = {Cloud Environment Selection and Configuration: {A} Software Product
+                  Lines-Based Approach. (S{\'{e}}lection et Configuration de Clouds
+                  : une Approche {\`{a}} Base de Lignes de Produits Logiciels)},
+  school       = {Lille University of Science and Technology, France},
+  year         = {2014},
+  url          = {https://tel.archives-ouvertes.fr/tel-01079956},
+  timestamp    = {Tue, 21 Jul 2020 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/phd/hal/Quinton14.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+    award={Best Thesis Award (GDR GPL)},
+  award_name={Award},
+  pdf={https://www.theses.fr/2014LIL10079},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/IEEEcloud/Quinton0D14,
+  abbr	= {CLOUD},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Daniel Romero and
+                  Laurence Duchien},
+  title        = {Automated Selection and Configuration of Cloud Environments Using
+                  Software Product Lines Principles},
+  booktitle    = {2014 {IEEE} 7th International Conference on Cloud Computing, Anchorage,
+                  AK, USA, June 27 - July 2, 2014},
+  pages        = {144--151},
+  publisher    = {{IEEE} Computer Society},
+  year         = {2014},
+  url          = {https://doi.org/10.1109/CLOUD.2014.29},
+  timestamp    = {Fri, 24 Mar 2023 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/conf/IEEEcloud/Quinton0D14.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://inria.hal.science/hal-00965836},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/splc/QuintonPBDB14,
+  abbr	= {SPLC},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Andreas Pleuss and
+                  Daniel Le Berre and
+                  Laurence Duchien and
+                  Goetz Botterweck},
+  editor       = {Stefania Gnesi and
+                  Alessandro Fantechi and
+                  Patrick Heymans and
+                  Julia Rubin and
+                  Krzysztof Czarnecki and
+                  Deepak Dhungana},
+  title        = {Consistency checking for the evolution of cardinality-based feature
+                  models},
+  booktitle    = {18th International Software Product Line Conference, {SPLC} '14, Florence,
+                  Italy, September 15-19, 2014},
+  pages        = {122--131},
+  publisher    = {{ACM}},
+  year         = {2014},
+  url          = {https://doi.org/10.1145/2648511.2648524},
+  timestamp    = {Fri, 30 Dec 2022 23:08:55 +0100},
+  biburl       = {https://dblp.org/rec/conf/splc/QuintonPBDB14.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://inria.hal.science/hal-01054604},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/splc/0002UQBCDM13,
+  abbr	= {MAPLE},
+  author       = {Daniel Romero and
+                  Simon Urli and
+                  Cl{\'{e}}ment Quinton and
+                  Mireille Blay{-}Fornarino and
+                  Philippe Collet and
+                  Laurence Duchien and
+                  S{\'{e}}bastien Mosser},
+  title        = {{SPLEMMA:} a generic framework for controlled-evolution of software
+                  product lines},
+  booktitle    = {17th International Software Product Line Conference co-located workshops,
+                  {SPLC} 2013 workshops, Tokyo, Japan - August 26 - 30, 2013},
+  pages        = {59--66},
+  publisher    = {{ACM}},
+  year         = {2013},
+  url          = {https://doi.org/10.1145/2499777.2500709},
+  timestamp    = {Sat, 09 Apr 2022 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/splc/0002UQBCDM13.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://doi.org/10.1145/2499777.2500709},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/splc/Quinton0D13,
+  abbr	= {SPLC},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Daniel Romero and
+                  Laurence Duchien},
+  editor       = {Tomoji Kishi and
+                  Stan Jarzabek and
+                  Stefania Gnesi},
+  title        = {Cardinality-based feature models with constraints: a pragmatic approach},
+  booktitle    = {17th International Software Product Line Conference, {SPLC} 2013,
+                  Tokyo, Japan - August 26 - 30, 2013},
+  pages        = {162--166},
+  publisher    = {{ACM}},
+  year         = {2013},
+  url          = {https://doi.org/10.1145/2491627.2491638},
+  timestamp    = {Tue, 06 Nov 2018 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/conf/splc/Quinton0D13.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://inria.hal.science/hal-00825971},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/wosp/QuintonHRD13,
+  abbr	= {MultiCloud},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Nicolas Haderer and
+                  Romain Rouvoy and
+                  Laurence Duchien},
+  editor       = {Danilo Ardagna and
+                  Lutz Schubert},
+  title        = {Towards multi-cloud configurations using feature models and ontologies},
+  booktitle    = {Proceedings of the 2013 international workshop on Multi-cloud applications
+                  and federated clouds, MultiCloud@ICPE 2013, Prague, Czech Republic,
+                  April 22, 2013},
+  pages        = {21--26},
+  publisher    = {{ACM}},
+  year         = {2013},
+  url          = {https://doi.org/10.1145/2462326.2462332},
+  timestamp    = {Mon, 03 Jan 2022 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/conf/wosp/QuintonHRD13.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://inria.hal.science/hal-00801702},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/caise/AcherHCQLM12,
+  abbr	= {CAiSE},
+  author       = {Mathieu Acher and
+                  Patrick Heymans and
+                  Philippe Collet and
+                  Cl{\'{e}}ment Quinton and
+                  Philippe Lahire and
+                  Philippe Merle},
+  editor       = {Jolita Ralyt{\'{e}} and
+                  Xavier Franch and
+                  Sjaak Brinkkemper and
+                  Stanislaw Wrycza},
+  title        = {Feature Model Differences},
+  booktitle    = {Advanced Information Systems Engineering - 24th International Conference,
+                  CAiSE 2012, Gdansk, Poland, June 25-29, 2012. Proceedings},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {7328},
+  pages        = {629--645},
+  publisher    = {Springer},
+  year         = {2012},
+  url          = {https://doi.org/10.1007/978-3-642-31095-9\_41},
+  timestamp    = {Tue, 14 May 2019 10:00:36 +0200},
+  biburl       = {https://dblp.org/rec/conf/caise/AcherHCQLM12.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://doi.org/10.1007/978-3-642-31095-9_41},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/eurosys/QuintonRD12,
+  abbr	= {CloudCP},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Romain Rouvoy and
+                  Laurence Duchien},
+  editor       = {Guillaume Pierre and
+                  Valentin Cristea},
+  title        = {Leveraging feature models to configure virtual appliances},
+  booktitle    = {Proceedings of the 2nd International Workshop on Cloud Computing Platforms,
+                  CloudCP '12, Bern, Switzerland, April 10, 2012},
+  pages        = {2:1--2:6},
+  publisher    = {{ACM}},
+  year         = {2012},
+  url          = {https://doi.org/10.1145/2168697.2168699},
+  timestamp    = {Mon, 03 Jan 2022 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/conf/eurosys/QuintonRD12.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://inria.hal.science/hal-00674379},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/icse/QuintonDHMC12,
+  abbr	= {PLEASE},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Laurence Duchien and
+                  Patrick Heymans and
+                  St{\'{e}}phane Mouton and
+                  Etienne Charlier},
+  editor       = {Julia Rubin and
+                  Goetz Botterweck and
+                  Andreas Pleuss and
+                  David M. Weiss},
+  title        = {Using feature modelling and automations to select among cloud solutions},
+  booktitle    = {Proceedings of the Third International Workshop on Product LinE Approaches
+                  in Software Engineering, {PLEASE} 2012, Zurich, Switzerland, June
+                  4, 2012},
+  pages        = {17--20},
+  publisher    = {{IEEE/ACM}},
+  year         = {2012},
+  url          = {https://doi.org/10.1109/PLEASE.2012.6229762},
+  timestamp    = {Thu, 23 Mar 2023 00:00:00 +0100},
+  biburl       = {https://dblp.org/rec/conf/icse/QuintonDHMC12.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://inria.hal.science/hal-00695401},
+  bibtex_show={true}
+}
+
+@article{DBLP:journals/ercim/ParraQD12,
+  abbr	= {ERCIM News},
+  author       = {Carlos Parra and
+                  Cl{\'{e}}ment Quinton and
+                  Laurence Duchien},
+  title        = {CAPucine: Context-Aware Service-Oriented Product Line for Mobile Apps},
+  journal      = {{ERCIM} News},
+  volume       = {2012},
+  number       = {88},
+  year         = {2012},
+  url          = {http://ercim-news.ercim.eu/en88/special/capucine-context-aware-service-oriented-product-line-for-mobile-apps},
+  timestamp    = {Wed, 03 Jul 2019 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/journals/ercim/ParraQD12.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://ercim-news.ercim.eu/images/stories/EN88/EN88-web.pdf},
+  bibtex_show={true}
+}
+
+@inproceedings{DBLP:conf/splc/QuintonPMD11,
+  abbr	= {MAPLE},
+  author       = {Cl{\'{e}}ment Quinton and
+                  Carlos Parra and
+                  S{\'{e}}bastien Mosser and
+                  Laurence Duchien},
+  editor       = {Ina Schaefer and
+                  Isabel John and
+                  Klaus Schmid},
+  title        = {Using multiple feature models to design applications for mobile phones},
+  booktitle    = {Software Product Lines - 15th International Conference, {SPLC} 2011,
+                  Munich, Germany, August 22-26, 2011. Workshop Proceedings (Volume
+                  2)},
+  pages        = {23},
+  publisher    = {{ACM}},
+  year         = {2011},
+  url          = {https://doi.org/10.1145/2019136.2019162},
+  timestamp    = {Sat, 09 Apr 2022 01:00:00 +0200},
+  biburl       = {https://dblp.org/rec/conf/splc/QuintonPMD11.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org},
+  pdf={https://hal.science/hal-00611379},
+  bibtex_show={true}
+}
+
